@@ -8,4 +8,10 @@
     <string name="setting">Setting</string>
     <string name="about_us">About us</string>
     <string name="birthday">Birthday</string>
+
+    <string name="about_us_content">
+        Creators - Zaw Moe Htike,\n\t\t\t\t Kaung Htet Lin, Paradeep\n
+        Email - uchihamoee@gmail.com\n
+        Facebook - Zaw Moe Htike
+    </string>
 </resources>

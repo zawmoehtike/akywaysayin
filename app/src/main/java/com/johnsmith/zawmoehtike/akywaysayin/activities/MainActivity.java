@@ -81,7 +81,8 @@ public class MainActivity extends AppCompatActivity {
                 return true;
 
             case R.id.about_us:
-                Toast.makeText(getApplicationContext(), "About us", Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(this, AboutUs.class);
+                startActivity(intent);
                 return true;
 
             default:
