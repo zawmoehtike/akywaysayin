@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">အေႂကြးစာရင္း</string>
+    <string name="app_name">AKywaySaYin</string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
@@ -10,8 +10,7 @@
     <string name="birthday">Birthday</string>
 
     <string name="about_us_content">
-        Creators - Zaw Moe Htike,\n\t\t\t\t Kaung Htet Lin, Paradeep\n
+        Creators - Z.M.H,\n\t\t\t\t K.H.L, P.T\n
         Email - uchihamoee@gmail.com\n
-        Facebook - Zaw Moe Htike
     </string>
 </resources>

@@ -42,10 +42,6 @@ public class MainActivity extends AppCompatActivity {
         tabLayout = (TabLayout) findViewById(R.id.tabs);
         tabLayout.setupWithViewPager(viewPager);
 
-        if (getIntent().getExtras() != null) {
-            Toast.makeText(this, "EXTRA DATA :" + getIntent().getExtras().getInt("EXTRA_SESSION_ID"), Toast.LENGTH_SHORT).show();
-        }
-
         FloatingActionButton floatingActionButton = (FloatingActionButton) findViewById(R.id.fab);
         floatingActionButton.setOnClickListener(new View.OnClickListener() {
             @Override
