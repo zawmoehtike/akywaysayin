@@ -1,10 +1,13 @@
 package com.johnsmith.zawmoehtike.akywaysayin.activities;
 
 import android.arch.lifecycle.ViewModelProviders;
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.EditText;
 import android.widget.RadioButton;
+import android.widget.Toast;
 
 import com.johnsmith.zawmoehtike.akywaysayin.R;
 import com.johnsmith.zawmoehtike.akywaysayin.model.BorrowLendItem;
@@ -61,5 +64,30 @@ public class EditBorrowLendItemActivity extends AppCompatActivity {
         etDate = findViewById(R.id.etDate);
         rbMeFromU = findViewById(R.id.rbMeFromU);
         rbMeToU = findViewById(R.id.rbMeToU);
+    }
+
+    public void updateBorrowLendItem(View view) {
+        BorrowLendItem borrowLendItem = new BorrowLendItem();
+        borrowLendItem.setItemName(etItemName.getText().toString());
+        borrowLendItem.setPersonName(etPersonName.getText().toString());
+        borrowLendItem.setDate(etDate.getText().toString());
+        if (rbMeFromU.isChecked()) {
+            borrowLendItem.setType("1");
+
+            updateItemAndGoToList(borrowLendItem);
+        } else if (rbMeToU.isChecked()) {
+            borrowLendItem.setType("0");
+
+            updateItemAndGoToList(borrowLendItem);
+        } else {
+            Toast.makeText(this, "Please Choose Borrow or Lend!", Toast.LENGTH_SHORT).show();
+        }
+    }
+
+    public void updateItemAndGoToList(BorrowLendItem borrowLendItem) {
+        borrowLendItemViewModel.updateItem(borrowLendItem);
+
+        Intent intent = new Intent(this, MainActivity.class);
+        startActivity(intent);
     }
 }
