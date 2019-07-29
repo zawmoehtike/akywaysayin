@@ -77,7 +77,7 @@ public class MainActivity extends AppCompatActivity {
                 return true;
 
             case R.id.about_us:
-                Intent intent = new Intent(this, AboutUs.class);
+                Intent intent = new Intent(this, AboutUsActivity.class);
                 startActivity(intent);
                 return true;
 

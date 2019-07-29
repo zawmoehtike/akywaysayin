@@ -38,7 +38,7 @@
                 android:layout_marginTop="10dp"
                 android:text="အေၾကာင္းအရာ"
                 android:textColor="@color/colorBlack"
-                android:textSize="20dp"/>
+                android:textSize="20sp"/>
 
             <EditText
                 android:id="@+id/etItemName"
@@ -50,7 +50,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
                 android:textColor="@color/colorGrayText"
-                android:textSize="18dp"
+                android:textSize="18sp"
                 android:hint="ဆန္​ ၃ အိတ္​\nဆီ ၄ ဘူး"/>
 
             <TextView
@@ -60,7 +60,7 @@
                 android:layout_marginTop="10dp"
                 android:text="အမည္"
                 android:textColor="@color/colorBlack"
-                android:textSize="20dp"/>
+                android:textSize="20sp"/>
 
             <EditText
                 android:id="@+id/etPersonName"
@@ -69,7 +69,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
                 android:textColor="@color/colorGrayText"
-                android:textSize="18dp"
+                android:textSize="18sp"
                 android:hint="ဦး ျမ"/>
 
             <TextView
@@ -79,7 +79,7 @@
                 android:layout_marginTop="10dp"
                 android:text="ရက္စြဲ"
                 android:textColor="@color/colorBlack"
-                android:textSize="20dp"/>
+                android:textSize="20sp"/>
 
             <EditText
                 android:id="@+id/et_date"
@@ -90,7 +90,7 @@
                 android:layout_marginLeft="10dp"
                 android:hint="@string/birthday"
                 android:textColor="@color/colorGrayText"
-                android:textSize="18dp"/>
+                android:textSize="18sp"/>
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -102,7 +102,7 @@
                     android:layout_height="wrap_content"
                     android:text="ရရန္ (သို႔မဟုတ္​) ေပးရန္"
                     android:textColor="@color/colorBlack"
-                    android:textSize="20dp"
+                    android:textSize="20sp"
                     android:layout_marginLeft="10dp"
                     android:layout_marginTop="10dp"/>
 
@@ -118,7 +118,7 @@
                         android:layout_height="wrap_content"
                         android:text="ရရန္စာရင္း"
                         android:textColor="@color/colorGrayText"
-                        android:textSize="18dp"/>
+                        android:textSize="18sp"/>
 
                     <RadioButton
                         android:id="@+id/rbMeToU"
@@ -126,7 +126,7 @@
                         android:layout_height="wrap_content"
                         android:text="ေပးရန္စာရင္း"
                         android:textColor="@color/colorGrayText"
-                        android:textSize="18dp"/>
+                        android:textSize="18sp"/>
 
                 </RadioGroup>
 
@@ -144,6 +144,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="မွတ္မည္"
+                    android:textColor="@color/colorBlack"
                     android:background="@color/colorGreenButton"/>
 
             </LinearLayout>

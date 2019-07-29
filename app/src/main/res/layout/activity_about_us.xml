@@ -4,7 +4,17 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".activities.AboutUs">
+    tools:context=".activities.AboutUsActivity">
+
+    <ImageView
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:background="@drawable/ic_close"
+        android:onClick="goPrevious"/>
 
     <android.support.v7.widget.CardView
         android:layout_marginTop="200dp"
@@ -28,7 +38,9 @@
 
             <TextView
                 android:layout_margin="20dp"
-                android:textSize="20sp"
+                android:textSize="15sp"
+                android:gravity="center"
+                android:textColor="@color/colorGrayText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/about_us_content"/>

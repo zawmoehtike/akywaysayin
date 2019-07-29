@@ -1,15 +1,13 @@
 <resources>
     <string name="app_name">AKywaySaYin</string>
 
-    <string name="hello_blank_fragment">Hello blank fragment</string>
-
     <string name="search">Search</string>
     <string name="setting">Setting</string>
     <string name="about_us">About us</string>
     <string name="birthday">Birthday</string>
 
     <string name="about_us_content">
-        Creators - Z.M.H, K.H.L, P.T\n
+        Creators - Zaw Moe Htike,\nKaung Htet Lin,\nPa Thi\n
         Email - uchihamoee@gmail.com
     </string>
 </resources>

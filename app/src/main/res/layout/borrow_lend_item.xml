@@ -31,7 +31,7 @@
                 android:layout_marginTop="3dp"
                 android:text="အေၾကာင္းအရာ"
                 android:textColor="@color/colorBlack"
-                android:textSize="20dp"/>
+                android:textSize="20sp"/>
 
             <TextView
                 android:layout_width="wrap_content"
@@ -41,7 +41,7 @@
                 android:layout_marginLeft="3dp"
                 android:layout_marginTop="3dp"
                 android:text="Item Name"
-                android:textSize="18dp"/>
+                android:textSize="18sp"/>
 
         </LinearLayout>
 
@@ -59,7 +59,7 @@
                 android:layout_marginTop="3dp"
                 android:text="အမည္"
                 android:textColor="@color/colorBlack"
-                android:textSize="20dp"/>
+                android:textSize="20sp"/>
 
             <TextView
                 android:layout_width="wrap_content"
@@ -68,7 +68,7 @@
                 android:layout_marginTop="3dp"
                 android:id="@+id/tvPersonName"
                 android:text="Person Name"
-                android:textSize="18dp"/>
+                android:textSize="18sp"/>
 
         </LinearLayout>
 
@@ -86,7 +86,7 @@
                 android:layout_marginTop="3dp"
                 android:text="ရက္​စြဲ"
                 android:textColor="@color/colorBlack"
-                android:textSize="20dp"/>
+                android:textSize="20sp"/>
 
             <TextView
                 android:layout_width="wrap_content"
@@ -95,7 +95,7 @@
                 android:layout_marginTop="3dp"
                 android:id="@+id/tvDate"
                 android:text="DD/MM/YY"
-                android:textSize="18dp"/>
+                android:textSize="18sp"/>
 
         </LinearLayout>
 
@@ -112,6 +112,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="ဖ်က္မည္"
+                android:textColor="@color/colorBlack"
                 android:background="@color/colorRedButton"
                 android:layout_marginRight="10dp"/>
 
@@ -120,6 +121,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="ျပင္​မည္​"
+                android:textColor="@color/colorBlack"
                 android:background="@color/colorYellowButton"/>
 
         </LinearLayout>
