@@ -72,10 +72,6 @@ public class MainActivity extends AppCompatActivity {
                 moveToSearch();
                 return true;
 
-            case R.id.action_settings:
-                Toast.makeText(getApplicationContext(), "Setting", Toast.LENGTH_SHORT).show();
-                return true;
-
             case R.id.about_us:
                 Intent intent = new Intent(this, AboutUsActivity.class);
                 startActivity(intent);

@@ -14,6 +14,7 @@ import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.FrameLayout;
 
 import com.johnsmith.zawmoehtike.akywaysayin.R;
 import com.johnsmith.zawmoehtike.akywaysayin.model.BorrowLendItem;
@@ -28,6 +29,7 @@ public class SearchActivity extends AppCompatActivity implements BorrowLendItemL
     private BorrowLendItemViewModel borrowLendItemViewModel;
     private BorrowLendItemListAdapter borrowLendItemListAdapter;
     private RecyclerView recyclerView;
+    private FrameLayout layoutEmptyList;
 
     EditText editText;
 
@@ -50,6 +52,7 @@ public class SearchActivity extends AppCompatActivity implements BorrowLendItemL
 
         borrowLendItemListAdapter = new BorrowLendItemListAdapter( getApplicationContext(), new ArrayList<BorrowLendItem>(), this);
         recyclerView = findViewById(R.id.recyclerViewSearch);
+        layoutEmptyList = findViewById(R.id.layoutSearchEmptyList);
         recyclerView.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
         recyclerView.setAdapter(borrowLendItemListAdapter);
 
@@ -71,9 +74,11 @@ public class SearchActivity extends AppCompatActivity implements BorrowLendItemL
                             borrowLendItemListAdapter.addItems(borrowLendItemList);
 
                             recyclerView.setVisibility(View.VISIBLE);
+                            layoutEmptyList.setVisibility(View.GONE);
                         }else{
 
                             recyclerView.setVisibility(View.GONE);
+                            layoutEmptyList.setVisibility(View.VISIBLE);
                         }
                     }
                 });
