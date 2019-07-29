@@ -46,10 +46,12 @@ public class EditBorrowLendItemActivity extends AppCompatActivity {
         etPersonName.setText(borrowLendItem.getPersonName());
         etDate.setText(borrowLendItem.getDate());
 
-        if(borrowLendItem.getType() == "0") {
+        if(borrowLendItem.getType().equals("1")) {
             rbMeFromU.setChecked(true);
-        } else {
+            rbMeToU.setChecked(false);
+        } else if(borrowLendItem.getType().equals("0")) {
             rbMeToU.setChecked(true);
+            rbMeFromU.setChecked(false);
         }
     }
 
