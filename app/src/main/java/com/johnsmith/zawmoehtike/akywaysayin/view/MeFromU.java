@@ -4,12 +4,14 @@ import android.arch.lifecycle.Observer;
 import android.arch.lifecycle.ViewModelProviders;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.constraint.ConstraintLayout;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.FrameLayout;
 
 import com.johnsmith.zawmoehtike.akywaysayin.R;
 import com.johnsmith.zawmoehtike.akywaysayin.model.BorrowLendItem;
@@ -24,6 +26,7 @@ public class MeFromU extends Fragment implements BorrowLendItemListAdapter.Delet
     private BorrowLendItemViewModel borrowLendItemViewModel;
     private BorrowLendItemListAdapter borrowLendItemListAdapter;
     private RecyclerView recyclerView;
+    private FrameLayout emptyLayout;
 
     public MeFromU() {
 
@@ -36,6 +39,7 @@ public class MeFromU extends Fragment implements BorrowLendItemListAdapter.Delet
 
         borrowLendItemListAdapter = new BorrowLendItemListAdapter( getContext(), new ArrayList<BorrowLendItem>(), this);
         recyclerView = view.findViewById(R.id.rvMeFromU);
+        emptyLayout = view.findViewById(R.id.layoutMeFromUEmptyList);
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
         recyclerView.setAdapter(borrowLendItemListAdapter);
 
@@ -49,9 +53,11 @@ public class MeFromU extends Fragment implements BorrowLendItemListAdapter.Delet
                     borrowLendItemListAdapter.addItems(borrowLendItemList);
 
                     recyclerView.setVisibility(View.VISIBLE);
+                    emptyLayout.setVisibility(View.GONE);
                 }else{
 
                     recyclerView.setVisibility(View.GONE);
+                    emptyLayout.setVisibility(View.VISIBLE);
                 }
             }
         });

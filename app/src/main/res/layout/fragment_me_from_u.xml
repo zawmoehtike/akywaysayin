@@ -7,6 +7,16 @@
         android:id="@+id/rvMeFromU"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:scrollbars="vertical" />
+        android:scrollbars="vertical"/>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/layoutMeFromUEmptyList">
+
+        <include
+            layout="@layout/empty_layout"/>
+
+    </FrameLayout>
 
 </LinearLayout>
