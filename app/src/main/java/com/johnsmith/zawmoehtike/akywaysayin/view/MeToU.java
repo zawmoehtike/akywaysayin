@@ -2,10 +2,12 @@ package com.johnsmith.zawmoehtike.akywaysayin.view;
 
 import android.arch.lifecycle.Observer;
 import android.arch.lifecycle.ViewModelProviders;
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.constraint.ConstraintLayout;
 import android.support.v4.app.Fragment;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -69,8 +71,13 @@ public class MeToU extends Fragment implements BorrowLendItemListAdapter.DeleteC
     }
 
     @Override
-    public void onDeleteClickItem(BorrowLendItem borrowLendItem) {
-
-        borrowLendItemViewModel.deleteItem(borrowLendItem);
+    public void onDeleteClickItem(final BorrowLendItem borrowLendItem) {
+        new AlertDialog.Builder(getContext())
+                .setMessage("ဖ်က္မွာလား")
+                .setPositiveButton("ဖ်က္မည္", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int whichButton) {
+                        borrowLendItemViewModel.deleteItem(borrowLendItem);
+                    }})
+                .setNegativeButton("မဖ်က္ပါ", null).show();
     }
 }
