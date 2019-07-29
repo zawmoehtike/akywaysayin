@@ -36,65 +36,97 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
                 android:layout_marginTop="10dp"
-                android:text="အေၾကာင္းအရာ" />
+                android:text="အေၾကာင္းအရာ"
+                android:textColor="@color/colorBlack"
+                android:textSize="20dp"/>
 
             <EditText
                 android:id="@+id/etItemName"
+                android:inputType="text|textMultiLine"
+                android:lines="5"
+                android:gravity="top"
+                android:singleLine="false"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp" />
+                android:layout_marginLeft="10dp"
+                android:textColor="@color/colorGrayText"
+                android:textSize="18dp"
+                android:hint="ဆန္​ ၃ အိတ္​\nဆီ ၄ ဘူး"/>
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
                 android:layout_marginTop="10dp"
-                android:text="အမည္" />
+                android:text="အမည္"
+                android:textColor="@color/colorBlack"
+                android:textSize="20dp"/>
 
             <EditText
                 android:id="@+id/etPersonName"
+                android:singleLine="true"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp" />
+                android:layout_marginLeft="10dp"
+                android:textColor="@color/colorGrayText"
+                android:textSize="18dp"
+                android:hint="ဦး ျမ"/>
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
                 android:layout_marginTop="10dp"
-                android:text="ရက္စြဲ" />
+                android:text="ရက္စြဲ"
+                android:textColor="@color/colorBlack"
+                android:textSize="20dp"/>
 
             <EditText
                 android:id="@+id/et_date"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:clickable="true"
                 android:focusable="false"
                 android:layout_marginLeft="10dp"
-                android:layout_marginTop="10dp"
-                android:hint="@string/birthday" />
+                android:hint="@string/birthday"
+                android:textColor="@color/colorGrayText"
+                android:textSize="18dp"/>
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal">
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="ရရန္ (သို႔မဟုတ္​) ေပးရန္"
+                    android:textColor="@color/colorBlack"
+                    android:textSize="20dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="10dp"/>
 
                 <RadioGroup
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:checkedButton="@+id/rbMeFromU">
+                    android:checkedButton="@+id/rbMeFromU"
+                    android:layout_marginLeft="10dp">
 
                     <RadioButton
                         android:id="@+id/rbMeFromU"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="ရရန္စာရင္း" />
+                        android:text="ရရန္စာရင္း"
+                        android:textColor="@color/colorGrayText"
+                        android:textSize="18dp"/>
 
                     <RadioButton
                         android:id="@+id/rbMeToU"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="ေပးရန္စာရင္း" />
+                        android:text="ေပးရန္စာရင္း"
+                        android:textColor="@color/colorGrayText"
+                        android:textSize="18dp"/>
 
                 </RadioGroup>
 
@@ -103,17 +135,16 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="5dp"
-                android:layout_marginTop="5dp"
-                android:orientation="horizontal">
+                android:layout_marginRight="20dp"
+                android:gravity="right"
+                android:orientation="vertical">
 
                 <Button
                     android:id="@+id/btnAdd"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="240dp"
                     android:text="မွတ္မည္"
-                    android:theme="@style/PrimaryFlatButton" />
+                    android:background="@color/colorGreenButton"/>
 
             </LinearLayout>
 

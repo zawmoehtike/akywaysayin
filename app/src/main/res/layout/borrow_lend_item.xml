@@ -18,38 +18,48 @@
         android:orientation="vertical">
 
         <LinearLayout
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_marginLeft="5dp"
+            android:orientation="vertical"
+            android:layout_marginLeft="20dp"
             android:layout_marginTop="5dp">
 
-            <ImageView
+            <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:src="@drawable/ic_description"/>
+                android:layout_marginLeft="0dp"
+                android:layout_marginTop="3dp"
+                android:text="အေၾကာင္းအရာ"
+                android:textColor="@color/colorBlack"
+                android:textSize="20dp"/>
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/tvItemName"
+                android:textColor="@color/colorGrayText"
                 android:layout_marginLeft="3dp"
                 android:layout_marginTop="3dp"
-                android:text="Item Name"/>
+                android:text="Item Name"
+                android:textSize="18dp"/>
 
         </LinearLayout>
 
         <LinearLayout
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_marginLeft="5dp"
+            android:orientation="vertical"
+            android:layout_marginLeft="20dp"
             android:layout_marginTop="5dp">
 
-            <ImageView
+            <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:src="@drawable/ic_person"/>
+                android:layout_marginLeft="3dp"
+                android:layout_marginTop="3dp"
+                android:text="အမည္"
+                android:textColor="@color/colorBlack"
+                android:textSize="20dp"/>
 
             <TextView
                 android:layout_width="wrap_content"
@@ -57,21 +67,26 @@
                 android:layout_marginLeft="3dp"
                 android:layout_marginTop="3dp"
                 android:id="@+id/tvPersonName"
-                android:text="Person Name"/>
+                android:text="Person Name"
+                android:textSize="18dp"/>
 
         </LinearLayout>
 
         <LinearLayout
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_marginLeft="5dp"
+            android:orientation="vertical"
+            android:layout_marginLeft="20dp"
             android:layout_marginTop="5dp">
 
-            <ImageView
+            <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:src="@drawable/ic_date"/>
+                android:layout_marginLeft="3dp"
+                android:layout_marginTop="3dp"
+                android:text="ရက္​စြဲ"
+                android:textColor="@color/colorBlack"
+                android:textSize="20dp"/>
 
             <TextView
                 android:layout_width="wrap_content"
@@ -79,23 +94,33 @@
                 android:layout_marginLeft="3dp"
                 android:layout_marginTop="3dp"
                 android:id="@+id/tvDate"
-                android:text="DD/MM/YY"/>
+                android:text="DD/MM/YY"
+                android:textSize="18dp"/>
 
         </LinearLayout>
 
         <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="40dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:layout_marginLeft="5dp">
+            android:layout_gravity="right"
+            android:layout_marginRight="10dp"
+            android:layout_marginBottom="10dp">
 
             <Button
                 android:id="@+id/btnDelete"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="ဖ်က္မည္"
-                android:theme="@style/PrimaryFlatButton"
-                android:layout_marginLeft="210dp"/>
+                android:background="@color/colorRedButton"
+                android:layout_marginRight="10dp"/>
+
+            <Button
+                android:id="@+id/btnEdit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="ျပင္​မည္​"
+                android:background="@color/colorYellowButton"/>
 
         </LinearLayout>
 
