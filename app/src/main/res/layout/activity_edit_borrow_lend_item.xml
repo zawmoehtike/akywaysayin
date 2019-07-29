@@ -145,7 +145,8 @@
                     android:layout_height="wrap_content"
                     android:text="မွတ္မည္"
                     android:textColor="@color/colorBlack"
-                    android:background="@color/colorGreenButton"/>
+                    android:background="@color/colorGreenButton"
+                    android:onClick="updateBorrowLendItem"/>
 
             </LinearLayout>
 

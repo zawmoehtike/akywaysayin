@@ -3,9 +3,9 @@ package com.johnsmith.zawmoehtike.akywaysayin.view;
 import android.arch.lifecycle.Observer;
 import android.arch.lifecycle.ViewModelProviders;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-import android.support.constraint.ConstraintLayout;
 import android.support.v4.app.Fragment;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.widget.LinearLayoutManager;
@@ -16,6 +16,7 @@ import android.view.ViewGroup;
 import android.widget.FrameLayout;
 
 import com.johnsmith.zawmoehtike.akywaysayin.R;
+import com.johnsmith.zawmoehtike.akywaysayin.activities.EditBorrowLendItemActivity;
 import com.johnsmith.zawmoehtike.akywaysayin.model.BorrowLendItem;
 import com.johnsmith.zawmoehtike.akywaysayin.view.adapter.BorrowLendItemListAdapter;
 import com.johnsmith.zawmoehtike.akywaysayin.viewmodel.BorrowLendItemViewModel;
@@ -23,7 +24,7 @@ import com.johnsmith.zawmoehtike.akywaysayin.viewmodel.BorrowLendItemViewModel;
 import java.util.ArrayList;
 import java.util.List;
 
-public class MeToU extends Fragment implements BorrowLendItemListAdapter.DeleteClickListener {
+public class MeToU extends Fragment implements BorrowLendItemListAdapter.DeleteClickListener, BorrowLendItemListAdapter.EditClickListener {
 
     private BorrowLendItemViewModel borrowLendItemViewModel;
     private BorrowLendItemListAdapter borrowLendItemListAdapter;
@@ -39,7 +40,7 @@ public class MeToU extends Fragment implements BorrowLendItemListAdapter.DeleteC
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_me_to_u, container, false);
 
-        borrowLendItemListAdapter = new BorrowLendItemListAdapter( getContext(), new ArrayList<BorrowLendItem>(), this);
+        borrowLendItemListAdapter = new BorrowLendItemListAdapter( getContext(), new ArrayList<BorrowLendItem>(), this, this);
 
         recyclerView = view.findViewById(R.id.rvMeToU);
         emptyLayout = view.findViewById(R.id.layoutMeToUEmptyList);
@@ -79,5 +80,12 @@ public class MeToU extends Fragment implements BorrowLendItemListAdapter.DeleteC
                         borrowLendItemViewModel.deleteItem(borrowLendItem);
                     }})
                 .setNegativeButton("မဖ်က္ပါ", null).show();
+    }
+
+    @Override
+    public void onEditClickItem(BorrowLendItem borrowLendItem) {
+        Intent intent = new Intent(getContext(), EditBorrowLendItemActivity.class);
+        intent.putExtra("borrow_lend_item_id", borrowLendItem.getId());
+        startActivity(intent);
     }
 }

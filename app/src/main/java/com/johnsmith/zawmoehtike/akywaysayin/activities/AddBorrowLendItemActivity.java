@@ -44,7 +44,7 @@ public class AddBorrowLendItemActivity extends AppCompatActivity {
 
         editText1 = findViewById(R.id.etItemName);
         editText2 = findViewById(R.id.etPersonName);
-        etDate = findViewById(R.id.et_date);
+        etDate = findViewById(R.id.etDate);
         radioButton1 = findViewById(R.id.rbMeFromU);
         radioButton2 = findViewById(R.id.rbMeToU);
         button = findViewById(R.id.btnAdd);
@@ -124,5 +124,9 @@ public class AddBorrowLendItemActivity extends AppCompatActivity {
 
     private void updateLabel() {
         etDate.setText(sdf.format(myCalendar.getTime()));
+    }
+
+    public void updateBorrowLendItem(View view) {
+
     }
 }

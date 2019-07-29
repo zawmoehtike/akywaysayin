@@ -19,12 +19,14 @@ public class BorrowLendItemListAdapter extends RecyclerView.Adapter<BorrowLendIt
     private List<BorrowLendItem> borrowLendItemList;
 
     private DeleteClickListener deleteClickListener;
+    private EditClickListener editClickListener;
 
-    public BorrowLendItemListAdapter(Context mContext, List<BorrowLendItem> borrowLendItemList, DeleteClickListener deleteClickListener) {
+    public BorrowLendItemListAdapter(Context mContext, List<BorrowLendItem> borrowLendItemList, DeleteClickListener deleteClickListener, EditClickListener editClickListener) {
         this.mContext = mContext;
         this.borrowLendItemList = borrowLendItemList;
 
         this.deleteClickListener = deleteClickListener;
+        this.editClickListener = editClickListener;
     }
 
     @Override
@@ -63,6 +65,7 @@ public class BorrowLendItemListAdapter extends RecyclerView.Adapter<BorrowLendIt
 
         private TextView tvItemName, tvPersonName, tvDate;
         private Button btnDelete;
+        private Button btnEdit;
         private BorrowLendItem borrowLendItem;
 
         public MyViewHolder(View view) {
@@ -73,8 +76,10 @@ public class BorrowLendItemListAdapter extends RecyclerView.Adapter<BorrowLendIt
             tvDate = view.findViewById(R.id.tvDate);
 
             btnDelete = view.findViewById(R.id.btnDelete);
+            btnEdit = view.findViewById(R.id.btnEdit);
 
             btnDelete.setOnClickListener(this);
+            btnEdit.setOnClickListener(this);
         }
 
         public void bindView(BorrowLendItem borrowLendItem){
@@ -93,6 +98,10 @@ public class BorrowLendItemListAdapter extends RecyclerView.Adapter<BorrowLendIt
 
                 case R.id.btnDelete :
                     if (deleteClickListener != null) deleteClickListener.onDeleteClickItem(borrowLendItem);
+                    break;
+
+                case R.id.btnEdit:
+                    editClickListener.onEditClickItem(borrowLendItem);
                     break;
             }
         }

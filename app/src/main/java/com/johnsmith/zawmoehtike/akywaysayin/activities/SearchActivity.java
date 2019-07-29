@@ -3,9 +3,11 @@ package com.johnsmith.zawmoehtike.akywaysayin.activities;
 import android.arch.lifecycle.Observer;
 import android.arch.lifecycle.ViewModelProviders;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -24,7 +26,7 @@ import com.johnsmith.zawmoehtike.akywaysayin.viewmodel.BorrowLendItemViewModel;
 import java.util.ArrayList;
 import java.util.List;
 
-public class SearchActivity extends AppCompatActivity implements BorrowLendItemListAdapter.DeleteClickListener {
+public class SearchActivity extends AppCompatActivity implements BorrowLendItemListAdapter.DeleteClickListener, BorrowLendItemListAdapter.EditClickListener {
 
     private BorrowLendItemViewModel borrowLendItemViewModel;
     private BorrowLendItemListAdapter borrowLendItemListAdapter;
@@ -50,7 +52,7 @@ public class SearchActivity extends AppCompatActivity implements BorrowLendItemL
 
         editText = findViewById(R.id.etSearch);
 
-        borrowLendItemListAdapter = new BorrowLendItemListAdapter( getApplicationContext(), new ArrayList<BorrowLendItem>(), this);
+        borrowLendItemListAdapter = new BorrowLendItemListAdapter( getApplicationContext(), new ArrayList<BorrowLendItem>(), this, this);
         recyclerView = findViewById(R.id.recyclerViewSearch);
         layoutEmptyList = findViewById(R.id.layoutSearchEmptyList);
         recyclerView.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
@@ -92,8 +94,21 @@ public class SearchActivity extends AppCompatActivity implements BorrowLendItemL
     }
 
     @Override
-    public void onDeleteClickItem(BorrowLendItem borrowLendItem) {
+    public void onDeleteClickItem(final BorrowLendItem borrowLendItem) {
 
-        borrowLendItemViewModel.deleteItem(borrowLendItem);
+        new AlertDialog.Builder(this)
+                .setMessage("ဖ်က္မွာလား")
+                .setPositiveButton("ဖ်က္မည္", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int whichButton) {
+                        borrowLendItemViewModel.deleteItem(borrowLendItem);
+                    }})
+                .setNegativeButton("မဖ်က္ပါ", null).show();
+    }
+
+    @Override
+    public void onEditClickItem(BorrowLendItem borrowLendItem) {
+        Intent intent = new Intent(this, EditBorrowLendItemActivity.class);
+        intent.putExtra("borrow_lend_item_id", borrowLendItem.getId());
+        startActivity(intent);
     }
 }
