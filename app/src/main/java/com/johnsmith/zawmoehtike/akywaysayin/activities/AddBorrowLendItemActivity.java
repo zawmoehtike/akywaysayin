@@ -120,6 +120,7 @@ public class AddBorrowLendItemActivity extends AppCompatActivity {
 
         Intent intent = new Intent(AddBorrowLendItemActivity.this, MainActivity.class);
         startActivity(intent);
+        finish();
     }
 
     private void updateLabel() {
