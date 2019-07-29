@@ -11,6 +11,8 @@ import com.johnsmith.zawmoehtike.akywaysayin.model.BorrowLendItem;
 
 import java.util.List;
 
+import static android.arch.persistence.room.OnConflictStrategy.REPLACE;
+
 @Dao
 public interface BorrowLendItemDao {
     @Query("SELECT * FROM borrow_lend_items")
@@ -40,6 +42,10 @@ public interface BorrowLendItemDao {
 
     @Update
     void updateBorrowLendItem(BorrowLendItem borrowLendItem);
+
+//    @Query("UPDATE borrow_lend_items SET item_name = :itemName, person_name = :personName," +
+//            " date = :date, type = :type WHERE id = :id")
+//    void updateBorrowLendItem(int id, String itemName, String personName, String date, String type);
 
     @Delete
     void deleteBorrowLendItem(BorrowLendItem borrowLendItem);

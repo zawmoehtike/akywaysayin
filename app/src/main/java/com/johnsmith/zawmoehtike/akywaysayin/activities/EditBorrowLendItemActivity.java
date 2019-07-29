@@ -68,23 +68,16 @@ public class EditBorrowLendItemActivity extends AppCompatActivity {
 
     public void updateBorrowLendItem(View view) {
         BorrowLendItem borrowLendItem = new BorrowLendItem();
+
         borrowLendItem.setItemName(etItemName.getText().toString());
         borrowLendItem.setPersonName(etPersonName.getText().toString());
         borrowLendItem.setDate(etDate.getText().toString());
         if (rbMeFromU.isChecked()) {
             borrowLendItem.setType("1");
-
-            updateItemAndGoToList(borrowLendItem);
         } else if (rbMeToU.isChecked()) {
             borrowLendItem.setType("0");
-
-            updateItemAndGoToList(borrowLendItem);
-        } else {
-            Toast.makeText(this, "Please Choose Borrow or Lend!", Toast.LENGTH_SHORT).show();
         }
-    }
 
-    public void updateItemAndGoToList(BorrowLendItem borrowLendItem) {
         borrowLendItemViewModel.updateItem(borrowLendItem);
 
         Intent intent = new Intent(this, MainActivity.class);

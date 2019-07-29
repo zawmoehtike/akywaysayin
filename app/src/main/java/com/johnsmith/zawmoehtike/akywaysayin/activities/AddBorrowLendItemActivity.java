@@ -125,8 +125,4 @@ public class AddBorrowLendItemActivity extends AppCompatActivity {
     private void updateLabel() {
         etDate.setText(sdf.format(myCalendar.getTime()));
     }
-
-    public void updateBorrowLendItem(View view) {
-
-    }
 }

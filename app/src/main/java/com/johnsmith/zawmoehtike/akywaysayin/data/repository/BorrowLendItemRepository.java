@@ -32,16 +32,16 @@ public class BorrowLendItemRepository {
         allBorrowLendItemMeToU = borrowLendItemDao.getAllBorrowLendItemMeToU();
     }
 
-    public void insert(BorrowLendItem student){
-        new BorrowLendItemRepository.insertAsyncTask(borrowLendItemDao).execute(student);
+    public void insert(BorrowLendItem borrowLendItem){
+        new BorrowLendItemRepository.insertAsyncTask(borrowLendItemDao).execute(borrowLendItem);
     }
 
-    public void delete(BorrowLendItem student){
-        new BorrowLendItemRepository.deleteAsyncTask(borrowLendItemDao).execute(student);
+    public void delete(BorrowLendItem borrowLendItem){
+        new BorrowLendItemRepository.deleteAsyncTask(borrowLendItemDao).execute(borrowLendItem);
     }
 
-    public void update(BorrowLendItem student){
-        new BorrowLendItemRepository.updateAsyncTask(borrowLendItemDao).execute(student);
+    public void update(BorrowLendItem borrowLendItem){
+        new BorrowLendItemRepository.updateAsyncTask(borrowLendItemDao).execute(borrowLendItem);
     }
 
     public LiveData<List<BorrowLendItem>> showAll(){
@@ -90,6 +90,8 @@ public class BorrowLendItemRepository {
         @Override
         protected Void doInBackground(final BorrowLendItem... params) {
             borrowLendItemDao.updateBorrowLendItem(params[0]);
+//            borrowLendItemDao.updateBorrowLendItem(params[0].getId(),
+//                    params[0].getItemName(), params[0].getPersonName(), params[0].getDate(), params[0].getType());
             return null;
         }
     }
