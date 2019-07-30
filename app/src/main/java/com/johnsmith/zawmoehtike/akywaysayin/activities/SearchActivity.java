@@ -119,5 +119,6 @@ public class SearchActivity extends AppCompatActivity implements BorrowLendItemL
         Intent intent = new Intent(this, EditBorrowLendItemActivity.class);
         intent.putExtra("borrow_lend_item_id", borrowLendItem.getId());
         startActivity(intent);
+        finish();
     }
 }

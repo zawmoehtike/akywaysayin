@@ -49,7 +49,6 @@ public class MainActivity extends AppCompatActivity {
 
                 Intent intent = new Intent(getApplicationContext(), AddBorrowLendItemActivity.class);
                 startActivity(intent);
-                finish();
             }
         });
     }
@@ -76,7 +75,6 @@ public class MainActivity extends AppCompatActivity {
             case R.id.about_us:
                 Intent intent = new Intent(this, AboutUsActivity.class);
                 startActivity(intent);
-                finish();
                 return true;
 
             default:
@@ -123,6 +121,5 @@ public class MainActivity extends AppCompatActivity {
     public void moveToSearch() {
         Intent intent = SearchActivity.newIntent(getApplicationContext());
         startActivity(intent);
-        finish();
     }
 }
