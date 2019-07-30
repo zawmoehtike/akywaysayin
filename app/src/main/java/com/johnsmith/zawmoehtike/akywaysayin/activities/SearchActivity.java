@@ -68,22 +68,28 @@ public class SearchActivity extends AppCompatActivity implements BorrowLendItemL
             public void onTextChanged(CharSequence s, int start, int before, int count) {
                 //  Live Data in View Model and Room
                 borrowLendItemViewModel = ViewModelProviders.of(SearchActivity.this).get(BorrowLendItemViewModel.class);
-                //  Delete and then Refresh, Update and then Refresh, Insert and then Refresh Data by Live Data
-                borrowLendItemViewModel.getBorrowLendItemByQuery(editText.getText().toString()).observe(SearchActivity.this, new Observer<List<BorrowLendItem>>() {
-                    @Override
-                    public void onChanged(@Nullable List<BorrowLendItem> borrowLendItemList) {
-                        if(borrowLendItemList.size() > 0) {
-                            borrowLendItemListAdapter.addItems(borrowLendItemList);
 
-                            recyclerView.setVisibility(View.VISIBLE);
-                            layoutEmptyList.setVisibility(View.GONE);
-                        }else{
+                if(editText.getText().length() >= 1) {
+                    //  Delete and then Refresh, Update and then Refresh, Insert and then Refresh Data by Live Data
+                    borrowLendItemViewModel.getBorrowLendItemByQuery(editText.getText().toString()).observe(SearchActivity.this, new Observer<List<BorrowLendItem>>() {
+                        @Override
+                        public void onChanged(@Nullable List<BorrowLendItem> borrowLendItemList) {
+                            if(borrowLendItemList.size() > 0) {
+                                borrowLendItemListAdapter.addItems(borrowLendItemList);
 
-                            recyclerView.setVisibility(View.GONE);
-                            layoutEmptyList.setVisibility(View.VISIBLE);
+                                recyclerView.setVisibility(View.VISIBLE);
+                                layoutEmptyList.setVisibility(View.GONE);
+                            }else{
+
+                                recyclerView.setVisibility(View.GONE);
+                                layoutEmptyList.setVisibility(View.VISIBLE);
+                            }
                         }
-                    }
-                });
+                    });
+                } else {
+                    recyclerView.setVisibility(View.GONE);
+                    layoutEmptyList.setVisibility(View.VISIBLE);
+                }
             }
 
             @Override
