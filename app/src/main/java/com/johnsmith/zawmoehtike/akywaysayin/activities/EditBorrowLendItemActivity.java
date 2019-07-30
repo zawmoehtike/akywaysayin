@@ -86,8 +86,6 @@ public class EditBorrowLendItemActivity extends AppCompatActivity {
 
         borrowLendItemViewModel.updateItem(borrowLendItem);
 
-        Intent intent = new Intent(this, MainActivity.class);
-        startActivity(intent);
         finish();
     }
 }

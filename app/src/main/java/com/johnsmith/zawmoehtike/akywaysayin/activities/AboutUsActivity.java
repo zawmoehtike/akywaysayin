@@ -16,12 +16,6 @@ public class AboutUsActivity extends AppCompatActivity {
     }
 
     public void goPrevious(View view) {
-        goBack();
-    }
-
-    private void goBack() {
-        Intent intent = new Intent(this, MainActivity.class);
-        startActivity(intent);
         finish();
     }
 }

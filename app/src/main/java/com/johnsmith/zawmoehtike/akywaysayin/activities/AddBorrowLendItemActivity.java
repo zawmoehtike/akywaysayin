@@ -118,8 +118,6 @@ public class AddBorrowLendItemActivity extends AppCompatActivity {
     public void addItemAndGoToList(BorrowLendItem borrowLendItem) {
         borrowLendItemViewModel.insertItem(borrowLendItem);
 
-        Intent intent = new Intent(AddBorrowLendItemActivity.this, MainActivity.class);
-        startActivity(intent);
         finish();
     }
 
