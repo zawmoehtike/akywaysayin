@@ -87,5 +87,6 @@ public class MeToU extends Fragment implements BorrowLendItemListAdapter.DeleteC
         Intent intent = new Intent(getContext(), EditBorrowLendItemActivity.class);
         intent.putExtra("borrow_lend_item_id", borrowLendItem.getId());
         startActivity(intent);
+        getActivity().finish();
     }
 }

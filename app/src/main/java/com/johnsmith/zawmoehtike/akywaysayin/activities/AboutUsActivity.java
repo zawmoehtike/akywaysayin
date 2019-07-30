@@ -15,7 +15,18 @@ public class AboutUsActivity extends AppCompatActivity {
         setContentView(R.layout.activity_about_us);
     }
 
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+
+        goBack();
+    }
+
     public void goPrevious(View view) {
+        goBack();
+    }
+
+    private void goBack() {
         Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
         finish();

@@ -90,5 +90,6 @@ public class MeFromU extends Fragment implements BorrowLendItemListAdapter.Delet
         Intent intent = new Intent(getContext(), EditBorrowLendItemActivity.class);
         intent.putExtra("borrow_lend_item_id", borrowLendItem.getId());
         startActivity(intent);
+        getActivity().finish();
     }
 }

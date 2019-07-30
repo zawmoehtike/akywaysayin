@@ -96,6 +96,15 @@ public class AddBorrowLendItemActivity extends AppCompatActivity {
         });
     }
 
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+
+        Intent intent = new Intent(this, MainActivity.class);
+        startActivity(intent);
+        finish();
+    }
+
     public void addItem() {
 
         BorrowLendItem borrowLendItem = new BorrowLendItem();

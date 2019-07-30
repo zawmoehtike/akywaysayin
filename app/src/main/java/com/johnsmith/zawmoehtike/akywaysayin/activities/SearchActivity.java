@@ -94,6 +94,15 @@ public class SearchActivity extends AppCompatActivity implements BorrowLendItemL
     }
 
     @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+
+        Intent intent = new Intent(this, MainActivity.class);
+        startActivity(intent);
+        finish();
+    }
+
+    @Override
     public void onDeleteClickItem(final BorrowLendItem borrowLendItem) {
 
         new AlertDialog.Builder(this)

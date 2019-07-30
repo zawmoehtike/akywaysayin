@@ -39,6 +39,15 @@ public class EditBorrowLendItemActivity extends AppCompatActivity {
         setDataToInputField();
     }
 
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+
+        Intent intent = new Intent(this, MainActivity.class);
+        startActivity(intent);
+        finish();
+    }
+
     private void getDataFromViewModel() {
         int borrowLendItemId = getIntent().getIntExtra("borrow_lend_item_id", 0);
         borrowLendItem = borrowLendItemViewModel.getBorrowLendItem(borrowLendItemId);
