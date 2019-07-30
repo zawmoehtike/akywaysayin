@@ -69,6 +69,7 @@ public class EditBorrowLendItemActivity extends AppCompatActivity {
     public void updateBorrowLendItem(View view) {
         BorrowLendItem borrowLendItem = new BorrowLendItem();
 
+        borrowLendItem.setId(this.borrowLendItem.getId());
         borrowLendItem.setItemName(etItemName.getText().toString());
         borrowLendItem.setPersonName(etPersonName.getText().toString());
         borrowLendItem.setDate(etDate.getText().toString());

@@ -7,6 +7,7 @@ import android.arch.persistence.room.PrimaryKey;
 @Entity(tableName = "borrow_lend_items")
 public class BorrowLendItem {
     @PrimaryKey(autoGenerate = true)
+    @ColumnInfo(name = "id")
     private int id;
 
     @ColumnInfo(name = "item_name")
