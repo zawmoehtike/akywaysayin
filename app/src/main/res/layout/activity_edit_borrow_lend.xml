@@ -112,7 +112,7 @@
                     android:checkedButton="@+id/rbMeFromU"
                     android:layout_marginLeft="10dp">
 
-                    <com.johnsmith.zawmoehtike.akywaysayin.utils.mmdetect.MMRadioButton
+                    <com.zawmoehtike.akywaysayin.utils.mmdetect.MMRadioButton
                         android:id="@+id/rbMeFromU"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -120,7 +120,7 @@
                         android:textColor="@color/colorGrayText"
                         android:textSize="18sp"/>
 
-                    <com.johnsmith.zawmoehtike.akywaysayin.utils.mmdetect.MMRadioButton
+                    <com.zawmoehtike.akywaysayin.utils.mmdetect.MMRadioButton
                         android:id="@+id/rbMeToU"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
