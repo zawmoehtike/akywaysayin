@@ -1,14 +1,28 @@
 <resources>
-    <string name="app_name">အ​ေႂကြးစာရင္​း</string>
+    <string name="app_name">AKywaySaYin</string>
 
-    <string name="search">Search</string>
+    <string name="search">ရှာမည်</string>
     <string name="setting">Setting</string>
     <string name="about_us">About us</string>
     <string name="birthday">Birthday</string>
 
     <string name="about_us_content">
-        Creators - Zaw Moe Htike,\nKaung Htet Lin,\nPa Thi\n
+        Creators - Zaw Moe Htike,\nKaung Htet Lin,\nPa Thi,\nBhone Myat Paing\n
         Email - uchihamoee@gmail.com
     </string>
     <string name="title_activity_splash">SplashActivity</string>
+    <string name="detail">အကြောင်းအရာ</string>
+    <string name="rice_3_pkg_oil_4_bottle">ဆန် ၃ အိတ်\nဆီ ၄ ဘူး</string>
+    <string name="name">အမည်</string>
+    <string name="u_mya">ဦး မြ</string>
+    <string name="date">ရက်စွဲ</string>
+    <string name="to_take_or_to_give">ရရန် (သို့မဟုတ်) ပေးရန်</string>
+    <string name="to_take">ရရန်စာရင်း</string>
+    <string name="to_give">ပေးရန်စာရင်း</string>
+    <string name="save">မှတ်မည်</string>
+    <string name="delete">ဖျက်မည်</string>
+    <string name="edit">ပြင်မည်</string>
+    <string name="empty">ဘာမှမရှိပါ</string>
+    <string name="are_you_delete">ဖျက်မှာလား</string>
+    <string name="no">မလုပ်ပါ</string>
 </resources>

@@ -4,6 +4,7 @@
     package="com.johnsmith.zawmoehtike.akywaysayin">
 
     <application
+        android:name=".AKywaySaYinApplication"
         android:allowBackup="true"
         android:icon="@drawable/a_kyway_sa_yin_logo"
         android:label="@string/app_name"
@@ -13,29 +14,36 @@
         tools:ignore="GoogleAppIndexingWarning">
         <activity
             android:name=".activities.SplashActivity"
-            android:label="@string/title_activity_splash"
-            android:theme="@style/MyMaterialTheme.NoActionBar">
+            android:label="@string/app_name"
+            android:theme="@style/MyMaterialTheme.NoActionBar"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".activities.MainActivity">
-
-        </activity>
+        <activity android:name=".activities.HomeActivity"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"/>
         <activity
-            android:name=".activities.AddBorrowLendItemActivity"
-            android:parentActivityName=".activities.MainActivity" />
+            android:name=".activities.AddBorrowLendActivity"
+            android:label="@string/app_name"
+            android:parentActivityName=".activities.HomeActivity"
+            android:screenOrientation="portrait"/>
         <activity
             android:name=".activities.SearchActivity"
-            android:parentActivityName=".activities.MainActivity"
-            android:theme="@style/MyMaterialTheme" />
+            android:label="@string/app_name"
+            android:parentActivityName=".activities.HomeActivity"
+            android:theme="@style/MyMaterialTheme"
+            android:screenOrientation="portrait"/>
         <activity
-            android:name=".activities.EditBorrowLendItemActivity"
-            android:parentActivityName=".activities.MainActivity" />
-        <activity android:name=".activities.AboutUsActivity" />
-
+            android:name=".activities.EditBorrowLendActivity"
+            android:label="@string/app_name"
+            android:parentActivityName=".activities.HomeActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".activities.AboutUsActivity"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"/>
     </application>
-
 </manifest>

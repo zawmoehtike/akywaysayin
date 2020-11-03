@@ -19,16 +19,16 @@ import android.widget.EditText;
 import android.widget.FrameLayout;
 
 import com.johnsmith.zawmoehtike.akywaysayin.R;
-import com.johnsmith.zawmoehtike.akywaysayin.model.BorrowLendItem;
-import com.johnsmith.zawmoehtike.akywaysayin.view.adapter.BorrowLendItemListAdapter;
-import com.johnsmith.zawmoehtike.akywaysayin.viewmodel.BorrowLendItemViewModel;
+import com.johnsmith.zawmoehtike.akywaysayin.data.entity.BorrowLendItem;
+import com.johnsmith.zawmoehtike.akywaysayin.adapters.BorrowLendItemListAdapter;
+import com.johnsmith.zawmoehtike.akywaysayin.viewmodel.HomeViewModel;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class SearchActivity extends AppCompatActivity implements BorrowLendItemListAdapter.DeleteClickListener, BorrowLendItemListAdapter.EditClickListener {
 
-    private BorrowLendItemViewModel borrowLendItemViewModel;
+    private HomeViewModel homeViewModel;
     private BorrowLendItemListAdapter borrowLendItemListAdapter;
     private RecyclerView recyclerView;
     private FrameLayout layoutEmptyList;
@@ -67,11 +67,11 @@ public class SearchActivity extends AppCompatActivity implements BorrowLendItemL
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
                 //  Live Data in View Model and Room
-                borrowLendItemViewModel = ViewModelProviders.of(SearchActivity.this).get(BorrowLendItemViewModel.class);
+                homeViewModel = ViewModelProviders.of(SearchActivity.this).get(HomeViewModel.class);
 
                 if(editText.getText().length() >= 1) {
                     //  Delete and then Refresh, Update and then Refresh, Insert and then Refresh Data by Live Data
-                    borrowLendItemViewModel.getBorrowLendItemByQuery(editText.getText().toString()).observe(SearchActivity.this, new Observer<List<BorrowLendItem>>() {
+                    homeViewModel.getBorrowLendItemByQuery(editText.getText().toString()).observe(SearchActivity.this, new Observer<List<BorrowLendItem>>() {
                         @Override
                         public void onChanged(@Nullable List<BorrowLendItem> borrowLendItemList) {
                             if(borrowLendItemList.size() > 0) {
@@ -106,14 +106,14 @@ public class SearchActivity extends AppCompatActivity implements BorrowLendItemL
                 .setMessage("ဖ်က္မွာလား")
                 .setPositiveButton("ဖ်က္မည္", new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int whichButton) {
-                        borrowLendItemViewModel.deleteItem(borrowLendItem);
+                        homeViewModel.deleteItem(borrowLendItem);
                     }})
                 .setNegativeButton("မဖ်က္ပါ", null).show();
     }
 
     @Override
     public void onEditClickItem(BorrowLendItem borrowLendItem) {
-        Intent intent = new Intent(this, EditBorrowLendItemActivity.class);
+        Intent intent = new Intent(this, EditBorrowLendActivity.class);
         intent.putExtra("borrow_lend_item_id", borrowLendItem.getId());
         startActivity(intent);
         finish();

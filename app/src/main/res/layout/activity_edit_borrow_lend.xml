@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".activities.AddBorrowLendItemActivity">
+    tools:context=".activities.EditBorrowLendActivity">
 
     <android.support.design.widget.AppBarLayout
         android:id="@+id/appbar_layout"
@@ -31,16 +31,16 @@
             android:layout_height="match_parent"
             android:orientation="vertical">
 
-            <TextView
+            <me.myatminsoe.mdetect.MMTextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
                 android:layout_marginTop="10dp"
-                android:text="အေၾကာင္းအရာ"
+                android:text="@string/detail"
                 android:textColor="@color/colorBlack"
                 android:textSize="20sp"/>
 
-            <EditText
+            <me.myatminsoe.mdetect.MMEditText
                 android:id="@+id/etItemName"
                 android:inputType="text|textMultiLine"
                 android:lines="5"
@@ -51,18 +51,18 @@
                 android:layout_marginLeft="10dp"
                 android:textColor="@color/colorGrayText"
                 android:textSize="18sp"
-                android:hint="ဆန္​ ၃ အိတ္​\nဆီ ၄ ဘူး"/>
+                android:hint="@string/rice_3_pkg_oil_4_bottle"/>
 
-            <TextView
+            <me.myatminsoe.mdetect.MMTextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
                 android:layout_marginTop="10dp"
-                android:text="အမည္"
+                android:text="@string/name"
                 android:textColor="@color/colorBlack"
                 android:textSize="20sp"/>
 
-            <EditText
+            <me.myatminsoe.mdetect.MMEditText
                 android:id="@+id/etPersonName"
                 android:singleLine="true"
                 android:layout_width="match_parent"
@@ -70,18 +70,18 @@
                 android:layout_marginLeft="10dp"
                 android:textColor="@color/colorGrayText"
                 android:textSize="18sp"
-                android:hint="ဦး ျမ"/>
+                android:hint="@string/u_mya"/>
 
-            <TextView
+            <me.myatminsoe.mdetect.MMTextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
                 android:layout_marginTop="10dp"
-                android:text="ရက္စြဲ"
+                android:text="@string/date"
                 android:textColor="@color/colorBlack"
                 android:textSize="20sp"/>
 
-            <EditText
+            <me.myatminsoe.mdetect.MMEditText
                 android:id="@+id/etDate"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -97,14 +97,14 @@
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
 
-                <TextView
+                <me.myatminsoe.mdetect.MMTextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="ရရန္ (သို႔မဟုတ္​) ေပးရန္"
-                    android:textColor="@color/colorBlack"
-                    android:textSize="20sp"
                     android:layout_marginLeft="10dp"
-                    android:layout_marginTop="10dp"/>
+                    android:layout_marginTop="10dp"
+                    android:text="@string/to_take_or_to_give"
+                    android:textColor="@color/colorBlack"
+                    android:textSize="20sp" />
 
                 <RadioGroup
                     android:layout_width="wrap_content"
@@ -112,19 +112,19 @@
                     android:checkedButton="@+id/rbMeFromU"
                     android:layout_marginLeft="10dp">
 
-                    <RadioButton
+                    <com.johnsmith.zawmoehtike.akywaysayin.utils.mmdetect.MMRadioButton
                         android:id="@+id/rbMeFromU"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="ရရန္စာရင္း"
+                        android:text="@string/to_take"
                         android:textColor="@color/colorGrayText"
                         android:textSize="18sp"/>
 
-                    <RadioButton
+                    <com.johnsmith.zawmoehtike.akywaysayin.utils.mmdetect.MMRadioButton
                         android:id="@+id/rbMeToU"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="ေပးရန္စာရင္း"
+                        android:text="@string/to_give"
                         android:textColor="@color/colorGrayText"
                         android:textSize="18sp"/>
 
@@ -139,13 +139,14 @@
                 android:gravity="right"
                 android:orientation="vertical">
 
-                <Button
+                <me.myatminsoe.mdetect.MMButtonView
                     android:id="@+id/btnAdd"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="မွတ္မည္"
+                    android:text="@string/save"
                     android:textColor="@color/colorBlack"
-                    android:background="@color/colorGreenButton"/>
+                    android:background="@color/colorGreenButton"
+                    android:onClick="updateBorrowLendItem"/>
 
             </LinearLayout>
 

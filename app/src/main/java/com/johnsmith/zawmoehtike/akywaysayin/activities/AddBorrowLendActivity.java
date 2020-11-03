@@ -2,7 +2,6 @@ package com.johnsmith.zawmoehtike.akywaysayin.activities;
 
 import android.app.DatePickerDialog;
 import android.arch.lifecycle.ViewModelProviders;
-import android.content.Intent;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -15,17 +14,17 @@ import android.widget.RadioButton;
 import android.widget.Toast;
 
 import com.johnsmith.zawmoehtike.akywaysayin.R;
-import com.johnsmith.zawmoehtike.akywaysayin.model.BorrowLendItem;
-import com.johnsmith.zawmoehtike.akywaysayin.viewmodel.BorrowLendItemViewModel;
+import com.johnsmith.zawmoehtike.akywaysayin.data.entity.BorrowLendItem;
+import com.johnsmith.zawmoehtike.akywaysayin.viewmodel.HomeViewModel;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.Locale;
 
-public class AddBorrowLendItemActivity extends AppCompatActivity {
+public class AddBorrowLendActivity extends AppCompatActivity {
 
-    BorrowLendItemViewModel borrowLendItemViewModel;
+    HomeViewModel homeViewModel;
 
     EditText editText1;
     EditText editText2;
@@ -40,7 +39,7 @@ public class AddBorrowLendItemActivity extends AppCompatActivity {
 
     public void init() {
 
-        borrowLendItemViewModel = ViewModelProviders.of(this).get(BorrowLendItemViewModel.class);
+        homeViewModel = ViewModelProviders.of(this).get(HomeViewModel.class);
 
         editText1 = findViewById(R.id.etItemName);
         editText2 = findViewById(R.id.etPersonName);
@@ -59,7 +58,7 @@ public class AddBorrowLendItemActivity extends AppCompatActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        setContentView(R.layout.activity_add_borrow_lend_item);
+        setContentView(R.layout.activity_add_borrow_lend);
 
 
         Toolbar toolbar = findViewById(R.id.tool_bar_add);
@@ -82,7 +81,7 @@ public class AddBorrowLendItemActivity extends AppCompatActivity {
         etDate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                new DatePickerDialog(AddBorrowLendItemActivity.this, date, myCalendar
+                new DatePickerDialog(AddBorrowLendActivity.this, date, myCalendar
                         .get(Calendar.YEAR), myCalendar.get(Calendar.MONTH),
                         myCalendar.get(Calendar.DAY_OF_MONTH)).show();
             }
@@ -116,7 +115,7 @@ public class AddBorrowLendItemActivity extends AppCompatActivity {
     }
 
     public void addItemAndGoToList(BorrowLendItem borrowLendItem) {
-        borrowLendItemViewModel.insertItem(borrowLendItem);
+        homeViewModel.insertItem(borrowLendItem);
 
         finish();
     }

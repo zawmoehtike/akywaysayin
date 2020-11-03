@@ -1,12 +1,11 @@
-package com.johnsmith.zawmoehtike.akywaysayin.data.database;
+package com.johnsmith.zawmoehtike.akywaysayin.data.localdatasource;
 
 import android.arch.persistence.room.Database;
 import android.arch.persistence.room.Room;
 import android.arch.persistence.room.RoomDatabase;
 import android.content.Context;
 
-import com.johnsmith.zawmoehtike.akywaysayin.data.dao.BorrowLendItemDao;
-import com.johnsmith.zawmoehtike.akywaysayin.model.BorrowLendItem;
+import com.johnsmith.zawmoehtike.akywaysayin.data.entity.BorrowLendItem;
 
 @Database(entities = {BorrowLendItem.class}, version = 1)
 public abstract class AppDatabase extends RoomDatabase {

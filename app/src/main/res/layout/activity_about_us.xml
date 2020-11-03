@@ -36,7 +36,7 @@
                 android:layout_height="100dp"
                 android:src="@drawable/a_kyway_sa_yin_logo"/>
 
-            <TextView
+            <me.myatminsoe.mdetect.MMTextView
                 android:layout_margin="20dp"
                 android:textSize="15sp"
                 android:gravity="center"

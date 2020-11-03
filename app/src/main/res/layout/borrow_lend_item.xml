@@ -24,23 +24,23 @@
             android:layout_marginLeft="20dp"
             android:layout_marginTop="5dp">
 
-            <TextView
+            <me.myatminsoe.mdetect.MMTextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="0dp"
                 android:layout_marginTop="3dp"
-                android:text="အေၾကာင္းအရာ"
+                android:text="@string/detail"
                 android:textColor="@color/colorBlack"
                 android:textSize="20sp"/>
 
-            <TextView
+            <me.myatminsoe.mdetect.MMTextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/tvItemName"
                 android:textColor="@color/colorGrayText"
                 android:layout_marginLeft="3dp"
                 android:layout_marginTop="3dp"
-                android:text="Item Name"
+                android:text="Lorem"
                 android:textSize="18sp"/>
 
         </LinearLayout>
@@ -52,22 +52,22 @@
             android:layout_marginLeft="20dp"
             android:layout_marginTop="5dp">
 
-            <TextView
+            <me.myatminsoe.mdetect.MMTextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="3dp"
                 android:layout_marginTop="3dp"
-                android:text="အမည္"
+                android:text="@string/name"
                 android:textColor="@color/colorBlack"
                 android:textSize="20sp"/>
 
-            <TextView
+            <me.myatminsoe.mdetect.MMTextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="3dp"
                 android:layout_marginTop="3dp"
                 android:id="@+id/tvPersonName"
-                android:text="Person Name"
+                android:text="Lorem"
                 android:textSize="18sp"/>
 
         </LinearLayout>
@@ -79,16 +79,16 @@
             android:layout_marginLeft="20dp"
             android:layout_marginTop="5dp">
 
-            <TextView
+            <me.myatminsoe.mdetect.MMTextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="3dp"
                 android:layout_marginTop="3dp"
-                android:text="ရက္​စြဲ"
+                android:text="@string/date"
                 android:textColor="@color/colorBlack"
                 android:textSize="20sp"/>
 
-            <TextView
+            <me.myatminsoe.mdetect.MMTextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="3dp"
@@ -107,20 +107,20 @@
             android:layout_marginRight="10dp"
             android:layout_marginBottom="10dp">
 
-            <Button
+            <me.myatminsoe.mdetect.MMButtonView
                 android:id="@+id/btnDelete"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="ဖ်က္မည္"
+                android:text="@string/delete"
                 android:textColor="@color/colorBlack"
                 android:background="@color/colorRedButton"
                 android:layout_marginRight="10dp"/>
 
-            <Button
+            <me.myatminsoe.mdetect.MMButtonView
                 android:id="@+id/btnEdit"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="ျပင္​မည္​"
+                android:text="@string/edit"
                 android:textColor="@color/colorBlack"
                 android:background="@color/colorYellowButton"/>
 

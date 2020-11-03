@@ -46,7 +46,7 @@ public class SplashActivity extends AppCompatActivity {
                         e.printStackTrace();
                     }
                     if (i == colorOne.length - 1) {
-                        startActivity(new Intent(SplashActivity.this, MainActivity.class));
+                        startActivity(new Intent(SplashActivity.this, HomeActivity.class));
                         finish();
                     }
                 }

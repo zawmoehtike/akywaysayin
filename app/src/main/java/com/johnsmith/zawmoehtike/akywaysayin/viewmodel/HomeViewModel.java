@@ -5,11 +5,11 @@ import android.arch.lifecycle.AndroidViewModel;
 import android.arch.lifecycle.LiveData;
 
 import com.johnsmith.zawmoehtike.akywaysayin.data.repository.BorrowLendItemRepository;
-import com.johnsmith.zawmoehtike.akywaysayin.model.BorrowLendItem;
+import com.johnsmith.zawmoehtike.akywaysayin.data.entity.BorrowLendItem;
 
 import java.util.List;
 
-public class BorrowLendItemViewModel extends AndroidViewModel {
+public class HomeViewModel extends AndroidViewModel {
     private BorrowLendItemRepository borrowLendItemRepository;
 
     private final LiveData<List<BorrowLendItem>> borrowLendItemList;
@@ -18,7 +18,7 @@ public class BorrowLendItemViewModel extends AndroidViewModel {
 
     private final LiveData<List<BorrowLendItem>> borrowLendItemListMeToU;
 
-    public BorrowLendItemViewModel(Application application) {
+    public HomeViewModel(Application application) {
         super(application);
 
         borrowLendItemRepository = new BorrowLendItemRepository(application);

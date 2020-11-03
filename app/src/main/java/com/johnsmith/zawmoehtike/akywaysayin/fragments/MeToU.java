@@ -1,4 +1,4 @@
-package com.johnsmith.zawmoehtike.akywaysayin.view;
+package com.johnsmith.zawmoehtike.akywaysayin.fragments;
 
 import android.arch.lifecycle.Observer;
 import android.arch.lifecycle.ViewModelProviders;
@@ -16,17 +16,19 @@ import android.view.ViewGroup;
 import android.widget.FrameLayout;
 
 import com.johnsmith.zawmoehtike.akywaysayin.R;
-import com.johnsmith.zawmoehtike.akywaysayin.activities.EditBorrowLendItemActivity;
-import com.johnsmith.zawmoehtike.akywaysayin.model.BorrowLendItem;
-import com.johnsmith.zawmoehtike.akywaysayin.view.adapter.BorrowLendItemListAdapter;
-import com.johnsmith.zawmoehtike.akywaysayin.viewmodel.BorrowLendItemViewModel;
+import com.johnsmith.zawmoehtike.akywaysayin.activities.EditBorrowLendActivity;
+import com.johnsmith.zawmoehtike.akywaysayin.data.entity.BorrowLendItem;
+import com.johnsmith.zawmoehtike.akywaysayin.adapters.BorrowLendItemListAdapter;
+import com.johnsmith.zawmoehtike.akywaysayin.viewmodel.HomeViewModel;
 
 import java.util.ArrayList;
 import java.util.List;
 
+import me.myatminsoe.mdetect.MDetect;
+
 public class MeToU extends Fragment implements BorrowLendItemListAdapter.DeleteClickListener, BorrowLendItemListAdapter.EditClickListener {
 
-    private BorrowLendItemViewModel borrowLendItemViewModel;
+    private HomeViewModel homeViewModel;
     private BorrowLendItemListAdapter borrowLendItemListAdapter;
     private RecyclerView recyclerView;
     private FrameLayout emptyLayout;
@@ -49,9 +51,9 @@ public class MeToU extends Fragment implements BorrowLendItemListAdapter.DeleteC
         recyclerView.setAdapter(borrowLendItemListAdapter);
 
         //  Live Data in View Model and Room
-        borrowLendItemViewModel = ViewModelProviders.of(this).get(BorrowLendItemViewModel.class);
+        homeViewModel = ViewModelProviders.of(this).get(HomeViewModel.class);
         //  Delete and then Refresh, Update and then Refresh, Insert and then Refresh Data by Live Data
-        borrowLendItemViewModel.getAllBorrowLendItemMeToU().observe(MeToU.this, new Observer<List<BorrowLendItem>>() {
+        homeViewModel.getAllBorrowLendItemMeToU().observe(MeToU.this, new Observer<List<BorrowLendItem>>() {
             @Override
             public void onChanged(@Nullable List<BorrowLendItem> borrowLendItemList) {
                 if(borrowLendItemList.size() > 0) {
@@ -74,17 +76,17 @@ public class MeToU extends Fragment implements BorrowLendItemListAdapter.DeleteC
     @Override
     public void onDeleteClickItem(final BorrowLendItem borrowLendItem) {
         new AlertDialog.Builder(getContext())
-                .setMessage("ဖ်က္မွာလား")
-                .setPositiveButton("ဖ်က္မည္", new DialogInterface.OnClickListener() {
+                .setMessage(MDetect.INSTANCE.getText(getString(R.string.are_you_delete)))
+                .setPositiveButton(MDetect.INSTANCE.getText(getString(R.string.delete)), new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int whichButton) {
-                        borrowLendItemViewModel.deleteItem(borrowLendItem);
+                        homeViewModel.deleteItem(borrowLendItem);
                     }})
-                .setNegativeButton("မဖ်က္ပါ", null).show();
+                .setNegativeButton(MDetect.INSTANCE.getText(getString(R.string.no)), null).show();
     }
 
     @Override
     public void onEditClickItem(BorrowLendItem borrowLendItem) {
-        Intent intent = new Intent(getContext(), EditBorrowLendItemActivity.class);
+        Intent intent = new Intent(getContext(), EditBorrowLendActivity.class);
         intent.putExtra("borrow_lend_item_id", borrowLendItem.getId());
         startActivity(intent);
     }

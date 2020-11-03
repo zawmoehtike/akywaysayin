@@ -13,16 +13,15 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.Toast;
 
 import com.johnsmith.zawmoehtike.akywaysayin.R;
-import com.johnsmith.zawmoehtike.akywaysayin.view.MeFromU;
-import com.johnsmith.zawmoehtike.akywaysayin.view.MeToU;
+import com.johnsmith.zawmoehtike.akywaysayin.fragments.MeFromU;
+import com.johnsmith.zawmoehtike.akywaysayin.fragments.MeToU;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class MainActivity extends AppCompatActivity {
+public class HomeActivity extends AppCompatActivity {
 
     private Toolbar toolbar;
     private TabLayout tabLayout;
@@ -31,7 +30,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_home);
 
         toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -47,7 +46,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                Intent intent = new Intent(getApplicationContext(), AddBorrowLendItemActivity.class);
+                Intent intent = new Intent(getApplicationContext(), AddBorrowLendActivity.class);
                 startActivity(intent);
             }
         });

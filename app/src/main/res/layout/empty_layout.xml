@@ -15,10 +15,10 @@
         app:layout_constraintTop_toTopOf="parent"
         android:id="@+id/imageViewEmptyList"/>
 
-    <TextView
+    <me.myatminsoe.mdetect.MMTextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="ဘာမွမ႐ွိပါ"
+        android:text="@string/empty"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@id/imageViewEmptyList"

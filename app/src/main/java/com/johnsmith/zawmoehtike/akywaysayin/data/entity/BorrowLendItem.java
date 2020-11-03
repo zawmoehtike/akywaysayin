@@ -1,4 +1,4 @@
-package com.johnsmith.zawmoehtike.akywaysayin.model;
+package com.johnsmith.zawmoehtike.akywaysayin.data.entity;
 
 import android.arch.persistence.room.ColumnInfo;
 import android.arch.persistence.room.Entity;

@@ -14,24 +14,24 @@
         android:gravity="center_horizontal">
 
 
-        <TextView
+        <me.myatminsoe.mdetect.MMTextView
             android:id="@+id/one"
             style="@style/welcome_text"
             android:text="A" />
 
-        <TextView
+        <me.myatminsoe.mdetect.MMTextView
             android:id="@+id/two"
             style="@style/welcome_text"
             android:layout_toRightOf="@id/one"
             android:text="Kyway" />
 
-        <TextView
+        <me.myatminsoe.mdetect.MMTextView
             android:id="@+id/three"
             style="@style/welcome_text"
             android:layout_toRightOf="@id/two"
             android:text="Sa" />
 
-        <TextView
+        <me.myatminsoe.mdetect.MMTextView
             android:id="@+id/four"
             style="@style/welcome_text"
             android:layout_toRightOf="@id/three"

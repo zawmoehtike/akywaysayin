@@ -4,9 +4,9 @@ import android.app.Application;
 import android.arch.lifecycle.LiveData;
 import android.os.AsyncTask;
 
-import com.johnsmith.zawmoehtike.akywaysayin.data.dao.BorrowLendItemDao;
-import com.johnsmith.zawmoehtike.akywaysayin.data.database.AppDatabase;
-import com.johnsmith.zawmoehtike.akywaysayin.model.BorrowLendItem;
+import com.johnsmith.zawmoehtike.akywaysayin.data.entity.BorrowLendItem;
+import com.johnsmith.zawmoehtike.akywaysayin.data.localdatasource.AppDatabase;
+import com.johnsmith.zawmoehtike.akywaysayin.data.localdatasource.BorrowLendItemDao;
 
 import java.util.List;
 

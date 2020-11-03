@@ -1,4 +1,4 @@
-package com.johnsmith.zawmoehtike.akywaysayin.view.adapter;
+package com.johnsmith.zawmoehtike.akywaysayin.adapters;
 
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
@@ -9,9 +9,11 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import com.johnsmith.zawmoehtike.akywaysayin.R;
-import com.johnsmith.zawmoehtike.akywaysayin.model.BorrowLendItem;
+import com.johnsmith.zawmoehtike.akywaysayin.data.entity.BorrowLendItem;
 
 import java.util.List;
+
+import me.myatminsoe.mdetect.MDetect;
 
 public class BorrowLendItemListAdapter extends RecyclerView.Adapter<BorrowLendItemListAdapter.MyViewHolder> {
 
@@ -86,9 +88,9 @@ public class BorrowLendItemListAdapter extends RecyclerView.Adapter<BorrowLendIt
 
             this.borrowLendItem = borrowLendItem;
 
-            tvItemName.setText(borrowLendItem.getItemName());
-            tvPersonName.setText(borrowLendItem.getPersonName());
-            tvDate.setText(borrowLendItem.getDate());
+            tvItemName.setText(MDetect.INSTANCE.getText(borrowLendItem.getItemName()));
+            tvPersonName.setText(MDetect.INSTANCE.getText(borrowLendItem.getPersonName()));
+            tvDate.setText(MDetect.INSTANCE.getText(borrowLendItem.getDate()));
         }
 
         @Override

@@ -1,22 +1,20 @@
 package com.johnsmith.zawmoehtike.akywaysayin.activities;
 
 import android.arch.lifecycle.ViewModelProviders;
-import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.RadioButton;
-import android.widget.Toast;
 
 import com.johnsmith.zawmoehtike.akywaysayin.R;
-import com.johnsmith.zawmoehtike.akywaysayin.model.BorrowLendItem;
-import com.johnsmith.zawmoehtike.akywaysayin.viewmodel.BorrowLendItemViewModel;
+import com.johnsmith.zawmoehtike.akywaysayin.data.entity.BorrowLendItem;
+import com.johnsmith.zawmoehtike.akywaysayin.viewmodel.HomeViewModel;
 
-public class EditBorrowLendItemActivity extends AppCompatActivity {
+public class EditBorrowLendActivity extends AppCompatActivity {
 
-    private BorrowLendItemViewModel borrowLendItemViewModel;
+    private HomeViewModel homeViewModel;
 
     private BorrowLendItem borrowLendItem;
 
@@ -29,13 +27,13 @@ public class EditBorrowLendItemActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_edit_borrow_lend_item);
+        setContentView(R.layout.activity_edit_borrow_lend);
 
         Toolbar toolbar = findViewById(R.id.tool_bar_add);
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        borrowLendItemViewModel = ViewModelProviders.of(this).get(BorrowLendItemViewModel.class);
+        homeViewModel = ViewModelProviders.of(this).get(HomeViewModel.class);
 
         initViewVariables();
 
@@ -46,7 +44,7 @@ public class EditBorrowLendItemActivity extends AppCompatActivity {
 
     private void getDataFromViewModel() {
         int borrowLendItemId = getIntent().getIntExtra("borrow_lend_item_id", 0);
-        borrowLendItem = borrowLendItemViewModel.getBorrowLendItem(borrowLendItemId);
+        borrowLendItem = homeViewModel.getBorrowLendItem(borrowLendItemId);
     }
 
     private void setDataToInputField() {
@@ -84,7 +82,7 @@ public class EditBorrowLendItemActivity extends AppCompatActivity {
             borrowLendItem.setType("0");
         }
 
-        borrowLendItemViewModel.updateItem(borrowLendItem);
+        homeViewModel.updateItem(borrowLendItem);
 
         finish();
     }
